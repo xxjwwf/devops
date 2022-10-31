@@ -103,7 +103,7 @@ class DeleteData:
 
     def handle_game_data(self, areaname):
         DELETE_DATE = (datetime.datetime.today() + datetime.timedelta(days=-180)).strftime('%Y-%m-%d')
-        DB_NAME = '{}_mj_game'.format(areaname)
+        DB_NAME = '{}'.format(areaname)
         #print("名称:{}\n数据库:{}\n处理日期:{}".format(areaname,DB_NAME,DELETE_DATE))
         logging.info("\n##########处理市场:{}\n数据库:{}\n处理日期:{}\n###########".format(areaname,DB_NAME,DELETE_DATE))
 
@@ -120,7 +120,7 @@ class DeleteData:
 
     def handle_log_data(self, areaname):
         DELETE_DATE = (datetime.datetime.today() + datetime.timedelta(days=-180)).strftime('%Y-%m-%d')
-        DB_NAME = '{}_mj_game_log'.format(areaname)
+        DB_NAME = '{}_log'.format(areaname)
         logging.info("\n############\n名称:{}\n数据库:{}\n处理日期:{}\n##########".format(areaname,DB_NAME,DELETE_DATE))
         # 正常情况下{}_1文件一定是存在的
         with open('log_tb/{}_1'.format(areaname), 'r+') as f:
